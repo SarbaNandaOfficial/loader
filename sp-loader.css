@@ -1,0 +1,35 @@
+.sp-loader-dash{
+	position:absolute;
+	top:calc(50% - 35px);
+	left:calc(50% - 35px);
+	z-index:10000;
+	height:70px;
+	width:70px;
+}
+.sp-loader-circle{
+	position:absolute;
+	z-index:10000;
+	overflow:hidden;
+	animation:rotate 1s linear infinite;
+	top:calc(50% - 25px);
+	left:calc(50% - 25px);
+	height:50px;
+	width:50px;
+}
+.path{
+	stroke-dasharray:1,200;
+	stroke-dashoffset:0;
+	animation:dash 2s ease-in-out infinite, color 10s ease-in-out infinite;
+	stroke-linecap:round;
+	stroke:rgb(33, 150, 243);
+}
+
+@keyframes rotate {
+	to{transform:rotate(1turn)}
+}
+@keyframes dash {
+	0%{stroke-dasharray:1,200;stroke-dashoffset:0}
+	50%{stroke-dasharray:90,200;stroke-dashoffset:-35}
+	to{stroke-dasharray:90,200;stroke-dashoffset:-125}
+}
+.uil-default {padding:25px;}
